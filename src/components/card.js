@@ -65,7 +65,7 @@ export default function RecipeReviewCard() {
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
+        image="https://github.com/E-Huynh/Portfolio/blob/master/src/assets/Employee%20tracker.png?raw=true"
         title="Paella dish"
       />
       <CardContent>
