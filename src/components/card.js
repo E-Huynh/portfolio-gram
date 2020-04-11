@@ -52,11 +52,6 @@ export default function ProjectCard({ data }) {
         image={data.image}
         title={data.title}
       />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {data.description}
-        </Typography>
-      </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
@@ -65,6 +60,11 @@ export default function ProjectCard({ data }) {
           <ShareIcon />
         </IconButton>
       </CardActions>
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {data.description}
+        </Typography>
+      </CardContent>
     </Card>
   );
 }
