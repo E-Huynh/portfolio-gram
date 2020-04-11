@@ -5,6 +5,7 @@ import { Container } from '@material-ui/core';
 import { Data } from './utils/postData'
 
 function App() {
+  console.log(Data[0])
   return (
     <div>
       <NavBar />
