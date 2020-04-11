@@ -1,10 +1,12 @@
 import React from 'react';
-import AppBar from './components/appbar';
+import Test from './components/test';
 
 
 function App() {
   return (
-    <AppBar/>
+    <div>
+      <Test/>
+    </div>
   );
 }
 
