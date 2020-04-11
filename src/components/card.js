@@ -49,7 +49,7 @@ export default function ProjectCard({ data }) {
       />
       <CardMedia
         className={classes.media}
-        image="https://github.com/E-Huynh/Portfolio/blob/master/src/assets/Employee%20tracker.png?raw=true"
+        image={data.image}
         title={data.title}
       />
       <CardContent>
