@@ -53,27 +53,28 @@ export default function RecipeReviewCard({data}) {
     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
+          <Avatar 
+            aria-label="recipe"
+            className={classes.avatar}
+            src={'https://avatars0.githubusercontent.com/u/56613046?s=460&u=dd342c337117a7ef40ee31b67df2c0b4c310f2cc&v=4'}
+          />
         }
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="Erik Huynh"
+        subheader={data.title}
       />
       <CardMedia
         className={classes.media}
         image="https://github.com/E-Huynh/Portfolio/blob/master/src/assets/Employee%20tracker.png?raw=true"
-        title="Paella dish"
+        title={data.title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {data.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
