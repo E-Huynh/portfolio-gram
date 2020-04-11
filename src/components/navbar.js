@@ -135,7 +135,7 @@ export default function NavBar() {
 
     return (
             <div className={classes.grow}>
-                <AppBar className={classes.foo}>
+                <AppBar className={classes.foo} position={'fixed'}>
                     <Toolbar className={classes.box}>
                         <Typography className={classes.title} variant="h6" noWrap>
                             Portfolio-gram
