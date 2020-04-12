@@ -1,5 +1,14 @@
 export const Data = [
     {
+        id: 'erik-huynh',
+        title: 'About Me',
+        image: 'https://e-huynh.github.io/updated_portfolio/assets/About_me.JPG',
+        description: 'SHORT BIO NEEDS TO GO HERE',
+        repo: 'https://github.com/E-Huynh/stock-shares-viewer',
+        link: 'https://young-everglades-16655.herokuapp.com/',
+        tech: ['FullStack', 'WebDeveloper', 'BachelorOfScience', 'UVU', 'FutureEmployee']
+    },
+    {
         id: 'stock-watcher',
         title: 'Stock Watcher',
         image: 'https://github.com/E-Huynh/Portfolio/blob/master/src/assets/stock-watcher.png?raw=true',
