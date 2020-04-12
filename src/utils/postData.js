@@ -5,7 +5,8 @@ export const Data = [
         image: 'https://github.com/E-Huynh/Portfolio/blob/master/src/assets/stock-watcher.png?raw=true',
         description: 'Application allows users to search and view stock information. Users are able to organize and save stocks into watchlists.',
         repo: 'https://github.com/E-Huynh/stock-shares-viewer',
-        link: 'https://young-everglades-16655.herokuapp.com/'
+        link: 'https://young-everglades-16655.herokuapp.com/',
+        tech: ['Bulma', 'MySQL', 'Sequelize', 'Express', 'AJAX/Axios']
     },
     {
         id: 'burger-wishlist',

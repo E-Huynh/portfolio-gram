@@ -29,6 +29,13 @@ const useStyles = makeStyles((theme) => ({
 function ProjectCard({ data }) {
   const classes = useStyles();
 
+  function createHashtags(arr) {
+    if (arr) {
+      const hashtags = '#' + arr.join(' #')
+      return hashtags
+    }
+  }
+
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -71,7 +78,7 @@ function ProjectCard({ data }) {
       </CardActions>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          <span className={classes.user}>Erik Huynh</span> {data.description}
+          <span className={classes.user}>Erik Huynh</span> {data.description} <span className={classes.user}>{createHashtags(data.tech)}</span>
         </Typography>
       </CardContent>
     </Card>
