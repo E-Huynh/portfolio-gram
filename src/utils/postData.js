@@ -4,8 +4,9 @@ export const Data = [
         title: 'About Me',
         image: 'https://e-huynh.github.io/updated_portfolio/assets/About_me.JPG',
         description: 'SHORT BIO NEEDS TO GO HERE',
-        repo: 'https://github.com/E-Huynh/stock-shares-viewer',
-        link: 'https://young-everglades-16655.herokuapp.com/',
+        repo: 'https://github.com/E-Huynh',
+        linkedin: 'https://www.linkedin.com/in/erik-huynh-228321196',
+        link: '',
         tech: ['FullStack', 'WebDeveloper', 'BachelorOfScience', 'UVU', 'FutureEmployee']
     },
     {

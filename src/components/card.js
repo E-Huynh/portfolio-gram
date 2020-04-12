@@ -6,13 +6,14 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Link from '@material-ui/core/Link';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
   },
   media: {
-    height: 0,
+    height: 100,
     paddingTop: '56.25%', // 16:9
   },
   button: {
@@ -62,17 +63,31 @@ function ProjectCard({ data }) {
         <IconButton aria-label="Like" className={classes.button} disableRipple>
           <FavoriteBorderOutlinedIcon />
         </IconButton>
-        <IconButton aria-label="Repository" className={classes.button} disableRipple>
-          <Link href={data.repo} target="_blank" color={'inherit'}>
-            <GitHubIcon />
-          </Link>
-        </IconButton>
-        {data.link
-          ? <IconButton aria-label="Link" className={classes.button} disableRipple>
-              <Link href={data.link} target="_blank" color={'inherit'}>
-                <LinkIcon />
+        {data.id !== 'erik-huynh'
+          ? <IconButton aria-label="Repository" className={classes.button} disableRipple>
+            <Link href={data.repo} target="_blank" color={'inherit'}>
+              <GitHubIcon />
+            </Link>
+          </IconButton>
+          : <>
+            <IconButton aria-label="Repository" className={classes.button} disableRipple>
+              <Link href={data.repo} target="_blank" color={'inherit'}>
+                <GitHubIcon />
               </Link>
             </IconButton>
+            <IconButton aria-label="Repository" className={classes.button} disableRipple>
+              <Link href={data.linkedin} target="_blank" color={'inherit'}>
+                <LinkedInIcon />
+              </Link>
+            </IconButton>
+          </>
+        }
+        {data.link
+          ? <IconButton aria-label="Link" className={classes.button} disableRipple>
+            <Link href={data.link} target="_blank" color={'inherit'}>
+              <LinkIcon />
+            </Link>
+          </IconButton>
           : null
         }
       </CardActions>
