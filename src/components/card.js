@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "transparent"
     }
+  },
+  user: {
+    fontWeight: 'bold',
+    color: '#000000'
   }
 }));
 
@@ -39,7 +43,7 @@ function ProjectCard({ data }) {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Erik Huynh"
+        title={<span className={classes.user}>Erik Huynh</span>}
         subheader={data.title}
       />
       <CardMedia
@@ -65,6 +69,11 @@ function ProjectCard({ data }) {
           : null
         }
       </CardActions>
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          <span className={classes.user}>Erik Huynh</span> {data.description}
+        </Typography>
+      </CardContent>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {data.description}
