@@ -161,9 +161,9 @@ function ProjectCard({ data }) {
           component="p"
         >
           <span className={classes.user}>
-            Erik Huynh
+            Erik Huynh&nbsp;
           </span>
-          {data.description}
+          {data.description}&nbsp;
           <span className={classes.hashtag}>
             {createHashtags(data.tech)}
           </span>
@@ -181,13 +181,18 @@ function ProjectCard({ data }) {
           >
             <InputBase
               style={{
-                flexGrow: 1
+                flexGrow: 1,
               }}
               placeholder='Add a comment...'
               inputProps={{ 'aria-label': 'Comment Area' }}
               multiline
             />
-            <Button size='small'>
+            <Button
+              style={{
+                color: '#0095F6'
+              }}
+              size='small'
+            >
               Post
             </Button>
           </FormControl>
