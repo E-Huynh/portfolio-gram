@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Link } from '@material-ui/core'
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Link, TextField } from '@material-ui/core'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -168,6 +168,19 @@ function ProjectCard({ data }) {
             {createHashtags(data.tech)}
           </span>
         </Typography>
+      </CardContent>
+      <CardContent>
+        <form noValidate autoComplete="off">
+          <TextField
+            id="comment-textarea"
+            label="Comment"
+            variant="standard"
+            margin='none'
+            placeholder='Add a comment...'
+            size='small'
+            fullWidth
+          />
+        </form>
       </CardContent>
     </Card>
   );
