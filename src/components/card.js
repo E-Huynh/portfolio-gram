@@ -1,18 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography} from '@material-ui/core'
 import { red } from '@material-ui/core/colors';
-import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkIcon from '@material-ui/icons/Link';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { FavoriteBorderOutlinedIcon, GitHubIcon, LinkIcon, MoreVertIcon } from '@material-ui/icons/FavoriteBorderOutlined';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,13 +44,13 @@ export default function ProjectCard({ data }) {
         title={data.title}
       />
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="Like" disableRipple>
           <FavoriteBorderOutlinedIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton aria-label="Repository" disableRipple>
           <GitHubIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton aria-label="Link" disableRipple>
           <LinkIcon />
         </IconButton>
       </CardActions>
