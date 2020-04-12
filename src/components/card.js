@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Link, TextField } from '@material-ui/core'
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Link, Button, FormControl, InputBase } from '@material-ui/core'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -39,8 +39,8 @@ function ProjectCard({ data }) {
     comments: []
   })
 
-  function toggleLike(){
-    setState({ ...state, isLiked: !state.isLiked})
+  function toggleLike() {
+    setState({ ...state, isLiked: !state.isLiked })
   }
 
   function createHashtags(arr) {
@@ -82,7 +82,7 @@ function ProjectCard({ data }) {
       <CardActions
         disableSpacing
       >
-        <IconButton 
+        <IconButton
           aria-label="Like"
           className={classes.button}
           disableRipple
@@ -90,16 +90,16 @@ function ProjectCard({ data }) {
         >
           {state.isLiked
             ? <FavoriteIcon
-                color="secondary"
-              />
+              color="secondary"
+            />
             : <FavoriteBorderOutlinedIcon />}
         </IconButton>
         {data.id !== 'erik-huynh'
           ? <IconButton
-              aria-label="Repository"
-              className={classes.button}
-              disableRipple
-            >
+            aria-label="Repository"
+            className={classes.button}
+            disableRipple
+          >
             <Link
               href={data.repo}
               target="_blank"
@@ -139,10 +139,10 @@ function ProjectCard({ data }) {
         }
         {data.link
           ? <IconButton
-              aria-label="Link"
-              className={classes.button}
-              disableRipple
-            >
+            aria-label="Link"
+            className={classes.button}
+            disableRipple
+          >
             <Link
               href={data.link}
               target="_blank"
@@ -171,15 +171,26 @@ function ProjectCard({ data }) {
       </CardContent>
       <CardContent>
         <form noValidate autoComplete="off">
-          <TextField
-            id="comment-textarea"
-            label="Comment"
-            variant="standard"
-            margin='none'
-            placeholder='Add a comment...'
-            size='small'
+          <FormControl
+          style={{
+            display: 'inline-flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-end'
+          }}
             fullWidth
-          />
+          >
+            <InputBase
+              style={{
+                flexGrow: 1
+              }}
+              placeholder='Add a comment...'
+              inputProps={{ 'aria-label': 'Comment Area' }}
+              multiline
+            />
+            <Button size='small'>
+              Post
+            </Button>
+          </FormControl>
         </form>
       </CardContent>
     </Card>
