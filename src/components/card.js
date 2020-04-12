@@ -77,6 +77,7 @@ function ProjectCard({ data }) {
         className={classes.media}
         image={data.image}
         title={data.title}
+        onDoubleClick={toggleLike}
       />
       <CardActions
         disableSpacing
