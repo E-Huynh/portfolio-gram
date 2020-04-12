@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography} from '@material-ui/core'
-import { red } from '@material-ui/core/colors';
 import { FavoriteBorderOutlinedIcon, GitHubIcon, LinkIcon, MoreVertIcon } from '@material-ui/icons/FavoriteBorderOutlined';
 
 const useStyles = makeStyles((theme) => ({
@@ -11,10 +10,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
+  }
 }));
 
 export default function ProjectCard({ data }) {
@@ -25,13 +21,12 @@ export default function ProjectCard({ data }) {
       <CardHeader
         avatar={
           <Avatar
-            aria-label="recipe"
-            className={classes.avatar}
+            aria-label="Erik Huynh"
             src={'https://avatars0.githubusercontent.com/u/56613046?s=460&u=dd342c337117a7ef40ee31b67df2c0b4c310f2cc&v=4'}
           />
         }
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label="Options">
             <MoreVertIcon />
           </IconButton>
         }
