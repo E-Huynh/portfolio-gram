@@ -35,7 +35,8 @@ function ProjectCard({ data }) {
   const classes = useStyles();
 
   const [state, setState] = useState({
-    isLiked: false
+    isLiked: false,
+    comments: []
   })
 
   function toggleLike(){
