@@ -1,7 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography} from '@material-ui/core'
-import { FavoriteBorderOutlinedIcon, GitHubIcon, LinkIcon, MoreVertIcon } from '@material-ui/icons/FavoriteBorderOutlined';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkIcon from '@material-ui/icons/Link';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function ProjectCard({ data }) {
+function ProjectCard({ data }) {
   const classes = useStyles();
 
   return (
@@ -57,3 +60,5 @@ export default function ProjectCard({ data }) {
     </Card>
   );
 }
+
+export default ProjectCard;
