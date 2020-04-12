@@ -13,6 +13,11 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+  },
+  button: {
+    "&:hover": {
+      backgroundColor: "transparent"
+    }
   }
 }));
 
@@ -29,7 +34,7 @@ function ProjectCard({ data }) {
           />
         }
         action={
-          <IconButton aria-label="Options">
+          <IconButton aria-label="Options" className={classes.button}>
             <MoreVertIcon />
           </IconButton>
         }
@@ -42,13 +47,13 @@ function ProjectCard({ data }) {
         title={data.title}
       />
       <CardActions disableSpacing>
-        <IconButton aria-label="Like" disableRipple>
+        <IconButton aria-label="Like" className={classes.button} disableRipple>
           <FavoriteBorderOutlinedIcon />
         </IconButton>
-        <IconButton aria-label="Repository" disableRipple>
+        <IconButton aria-label="Repository" className={classes.button} disableRipple>
           <GitHubIcon />
         </IconButton>
-        <IconButton aria-label="Link" disableRipple>
+        <IconButton aria-label="Link" className={classes.button} disableRipple>
           <LinkIcon />
         </IconButton>
       </CardActions>
