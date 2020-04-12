@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-gh-pages/static/js/main.377fb342.chunk.js",
-    "main.js.map": "/react-gh-pages/static/js/main.377fb342.chunk.js.map",
-    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.c59bacd3.js",
-    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.c59bacd3.js.map",
-    "static/js/2.442385c6.chunk.js": "/react-gh-pages/static/js/2.442385c6.chunk.js",
-    "static/js/2.442385c6.chunk.js.map": "/react-gh-pages/static/js/2.442385c6.chunk.js.map",
-    "index.html": "/react-gh-pages/index.html",
-    "precache-manifest.fd5e51067fa463c79554fa5742503911.js": "/react-gh-pages/precache-manifest.fd5e51067fa463c79554fa5742503911.js",
-    "service-worker.js": "/react-gh-pages/service-worker.js",
-    "static/js/2.442385c6.chunk.js.LICENSE.txt": "/react-gh-pages/static/js/2.442385c6.chunk.js.LICENSE.txt"
+    "main.js": "/portfolio-gram/static/js/main.0b421cbc.chunk.js",
+    "main.js.map": "/portfolio-gram/static/js/main.0b421cbc.chunk.js.map",
+    "runtime-main.js": "/portfolio-gram/static/js/runtime-main.bfb9bb2f.js",
+    "runtime-main.js.map": "/portfolio-gram/static/js/runtime-main.bfb9bb2f.js.map",
+    "static/js/2.442385c6.chunk.js": "/portfolio-gram/static/js/2.442385c6.chunk.js",
+    "static/js/2.442385c6.chunk.js.map": "/portfolio-gram/static/js/2.442385c6.chunk.js.map",
+    "index.html": "/portfolio-gram/index.html",
+    "precache-manifest.2bf75d2287b9600718d9c5d606992b46.js": "/portfolio-gram/precache-manifest.2bf75d2287b9600718d9c5d606992b46.js",
+    "service-worker.js": "/portfolio-gram/service-worker.js",
+    "static/js/2.442385c6.chunk.js.LICENSE.txt": "/portfolio-gram/static/js/2.442385c6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c59bacd3.js",
+    "static/js/runtime-main.bfb9bb2f.js",
     "static/js/2.442385c6.chunk.js",
-    "static/js/main.377fb342.chunk.js"
+    "static/js/main.0b421cbc.chunk.js"
   ]
 }
