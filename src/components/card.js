@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   user: {
-    fontWeight: 'bold',
+    fontWeight: 400,
     color: '#000000'
   }
 }));
