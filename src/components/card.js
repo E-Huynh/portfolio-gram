@@ -172,11 +172,11 @@ function ProjectCard({ data }) {
       <CardContent>
         <form noValidate autoComplete="off">
           <FormControl
-          style={{
-            display: 'inline-flex',
-            flexDirection: 'row',
-            justifyContent: 'flex-end'
-          }}
+            style={{
+              display: 'inline-flex',
+              flexDirection: 'row',
+              justifyContent: 'flex-end'
+            }}
             fullWidth
           >
             <InputBase
