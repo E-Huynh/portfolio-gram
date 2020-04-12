@@ -9,8 +9,9 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkIcon from '@material-ui/icons/Link';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
@@ -54,10 +55,13 @@ export default function ProjectCard({ data }) {
       />
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <FavoriteBorderOutlinedIcon />
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon />
+          <GitHubIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <LinkIcon />
         </IconButton>
       </CardActions>
       <CardContent>
