@@ -50,7 +50,9 @@ function ProjectCard({ data }) {
   }
 
   return (
-    <Card className={classes.root}>
+    <Card
+      className={classes.root}
+    >
       <CardHeader
         avatar={
           <Avatar
@@ -75,37 +77,71 @@ function ProjectCard({ data }) {
         image={data.image}
         title={data.title}
       />
-      <CardActions disableSpacing>
+      <CardActions
+        disableSpacing
+      >
         <IconButton 
           aria-label="Like"
           className={classes.button}
           disableRipple
           onClick={toggleLike}
-          >
+        >
           {state.isLiked ? <FavoriteIcon color="secondary"/> : <FavoriteBorderOutlinedIcon />}
         </IconButton>
         {data.id !== 'erik-huynh'
-          ? <IconButton aria-label="Repository" className={classes.button} disableRipple>
-            <Link href={data.repo} target="_blank" color={'inherit'}>
+          ? <IconButton
+              aria-label="Repository"
+              className={classes.button}
+              disableRipple
+            >
+            <Link
+              href={data.repo}
+              target="_blank"
+              color={'inherit'}
+            >
               <GitHubIcon />
             </Link>
           </IconButton>
           : <>
-            <IconButton aria-label="Repository" className={classes.button} disableRipple>
-              <Link href={data.repo} target="_blank" color={'inherit'}>
+            <IconButton
+              aria-label="Repository"
+              className={classes.button}
+              disableRipple
+            >
+              <Link
+                href={data.repo}
+                target="_blank"
+                color={'inherit'}
+              >
                 <GitHubIcon />
               </Link>
             </IconButton>
-            <IconButton aria-label="Repository" className={classes.button} disableRipple>
-              <Link href={data.linkedin} target="_blank" color={'inherit'}>
+            <IconButton
+              aria-label="Repository"
+              className={classes.button}
+              disableRipple
+            >
+              <Link
+                href={data.linkedin}
+                target="_blank"
+                color={'inherit'}
+              >
                 <LinkedInIcon />
               </Link>
             </IconButton>
           </>
         }
         {data.link
-          ? <IconButton aria-label="Link" className={classes.button} disableRipple>
-            <Link href={data.link} target="_blank" color={'inherit'}>
+          ? <IconButton
+              aria-label="Link"
+              className={classes.button}
+              disableRipple
+            >
+            <Link
+              href={data.link}
+              target="_blank"
+              color={'inherit'}
+            >
               <LinkIcon />
             </Link>
           </IconButton>
@@ -113,7 +149,11 @@ function ProjectCard({ data }) {
         }
       </CardActions>
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+        >
           <span className={classes.user}>Erik Huynh</span> {data.description} <span className={classes.hashtag}>{createHashtags(data.tech)}</span>
         </Typography>
       </CardContent>
