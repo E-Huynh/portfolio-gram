@@ -33,7 +33,7 @@ export const Data = [
         description: 'Application that allows users to store, view and delete notes.',
         repo: 'https://github.com/E-Huynh/note_taker',
         link: 'https://secure-waters-63965.herokuapp.com/',
-        tech: ['#Bootstrap', 'FileSystem', 'Path', 'Jquery']
+        tech: ['Bootstrap', 'FileSystem', 'Path', 'Jquery']
     },
     {
         id: 'team-profile-generator',
@@ -96,7 +96,7 @@ export const Data = [
         description: 'Quickly generate passwords with user specified inputs of character type and length.',
         repo: 'https://github.com/E-Huynh/Password_Generator',
         link: 'https://e-huynh.github.io/Password_Generator/',
-        tech: ['#Bootstrap', 'Javascript']
+        tech: ['Bootstrap', 'Javascript']
     },
     {
         id: 'rgb-game',
