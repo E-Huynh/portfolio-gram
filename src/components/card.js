@@ -88,7 +88,11 @@ function ProjectCard({ data }) {
           disableRipple
           onClick={toggleLike}
         >
-          {state.isLiked ? <FavoriteIcon color="secondary"/> : <FavoriteBorderOutlinedIcon />}
+          {state.isLiked
+            ? <FavoriteIcon
+                color="secondary"
+              />
+            : <FavoriteBorderOutlinedIcon />}
         </IconButton>
         {data.id !== 'erik-huynh'
           ? <IconButton
