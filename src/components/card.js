@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Link } from '@material-ui/core'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -33,6 +34,14 @@ const useStyles = makeStyles((theme) => ({
 function ProjectCard({ data }) {
   const classes = useStyles();
 
+  const [state, setState] = useState({
+    isLiked: false
+  })
+
+  function toggleLike(){
+    setState({ ...state, isLiked: !state.isLiked})
+  }
+
   function createHashtags(arr) {
     if (arr) {
       const hashtags = '#' + arr.join(' #')
@@ -50,7 +59,11 @@ function ProjectCard({ data }) {
           />
         }
         action={
-          <IconButton aria-label="Options" className={classes.button} disableRipple>
+          <IconButton
+            aria-label="Options"
+            className={classes.button}
+            disableRipple
+          >
             <MoreVertIcon />
           </IconButton>
         }
@@ -63,8 +76,13 @@ function ProjectCard({ data }) {
         title={data.title}
       />
       <CardActions disableSpacing>
-        <IconButton aria-label="Like" className={classes.button} disableRipple>
-          <FavoriteBorderOutlinedIcon />
+        <IconButton 
+          aria-label="Like"
+          className={classes.button}
+          disableRipple
+          onClick={toggleLike}
+          >
+          {state.isLiked ? <FavoriteIcon color="secondary"/> : <FavoriteBorderOutlinedIcon />}
         </IconButton>
         {data.id !== 'erik-huynh'
           ? <IconButton aria-label="Repository" className={classes.button} disableRipple>
