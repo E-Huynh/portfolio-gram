@@ -35,7 +35,7 @@ function ProjectCard({ data }) {
           />
         }
         action={
-          <IconButton aria-label="Options" className={classes.button}>
+          <IconButton aria-label="Options" className={classes.button} disableRipple>
             <MoreVertIcon />
           </IconButton>
         }
