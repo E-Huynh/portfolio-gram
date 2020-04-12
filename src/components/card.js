@@ -160,7 +160,13 @@ function ProjectCard({ data }) {
           color="textSecondary"
           component="p"
         >
-          <span className={classes.user}>Erik Huynh</span> {data.description} <span className={classes.hashtag}>{createHashtags(data.tech)}</span>
+          <span className={classes.user}>
+            Erik Huynh
+          </span>
+          {data.description}
+          <span className={classes.hashtag}>
+            {createHashtags(data.tech)}
+          </span>
         </Typography>
       </CardContent>
     </Card>
