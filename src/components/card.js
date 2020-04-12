@@ -24,7 +24,11 @@ const useStyles = makeStyles((theme) => ({
   user: {
     fontWeight: 400,
     color: '#000000'
-  }
+  },
+  hashtag: {
+    fontWeight: 400,
+    color: '#0000EE'
+  },
 }));
 
 function ProjectCard({ data }) {
@@ -93,7 +97,7 @@ function ProjectCard({ data }) {
       </CardActions>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          <span className={classes.user}>Erik Huynh</span> {data.description} <span className={classes.user}>{createHashtags(data.tech)}</span>
+          <span className={classes.user}>Erik Huynh</span> {data.description} <span className={classes.hashtag}>{createHashtags(data.tech)}</span>
         </Typography>
       </CardContent>
     </Card>
