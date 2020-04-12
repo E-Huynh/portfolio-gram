@@ -1,10 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography} from '@material-ui/core'
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography } from '@material-ui/core'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,11 +52,18 @@ function ProjectCard({ data }) {
           <FavoriteBorderOutlinedIcon />
         </IconButton>
         <IconButton aria-label="Repository" className={classes.button} disableRipple>
-          <GitHubIcon />
+          <Link href={data.repo} target="_blank" color={'inherit'}>
+            <GitHubIcon />
+          </Link>
         </IconButton>
-        <IconButton aria-label="Link" className={classes.button} disableRipple>
-          <LinkIcon />
-        </IconButton>
+        {data.link
+          ? <IconButton aria-label="Link" className={classes.button} disableRipple>
+              <Link href={data.link} target="_blank" color={'inherit'}>
+                <LinkIcon />
+              </Link>
+            </IconButton>
+          : null
+        }
       </CardActions>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">

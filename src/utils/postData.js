@@ -12,8 +12,8 @@ export const Data = [
         title: 'Burger Wishlist',
         image: 'https://github.com/E-Huynh/Portfolio/blob/master/src/assets/burger-wishlist.png?raw=true',
         description: 'Application that stores and displays users burger wishlist. The client displays and allows the user to interact with the database.',
-        repo: 'https://young-everglades-16655.herokuapp.com/',
-        link: 'https://github.com/E-Huynh/stock-shares-viewer'
+        repo: 'https://github.com/E-Huynh/burger-wishlist',
+        link: 'https://young-everglades-16655.herokuapp.com/'
     },
     {
         id: 'employee-tracker',
