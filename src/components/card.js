@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 function ProjectCard({ data }) {
   const classes = useStyles();
+  let map = {};
 
   const [state, setState] = useState({
     isLiked: false,
@@ -49,6 +50,12 @@ function ProjectCard({ data }) {
     setState({ ...state, pastComments: state.pastComments })
     clearForm(event);
   }
+
+  const handleOnChange = (event) => {
+    const name = event.target.name
+    const comment = event.target.value
+    setState({...state, [name]: comment})
+  }
   
   const clearForm = (event) => {
     event.target.value = '';
@@ -63,8 +70,6 @@ function ProjectCard({ data }) {
       return hashtags
     }
   }
-
-  let map = {};
 
   return (
     <Card
@@ -214,6 +219,7 @@ function ProjectCard({ data }) {
               inputProps={{ 'aria-label': 'Comment Area' }}
               multiline
               name='comment'
+              onChange={handleOnChange}
               onKeyDown={(event) => {
                 map[event.keyCode] = event.type === 'keydown';
                 if (!map['16'] && map['13']) {
@@ -233,6 +239,7 @@ function ProjectCard({ data }) {
               }}
               size='small'
               type='submit'
+              disabled={state.comment !== '' ? false : true}
             >
               Post
             </Button>
