@@ -12,12 +12,20 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
   },
-  commentDiv: {
+  commentForm: {
     display: 'inline-flex',
     flexDirection: 'row',
     justifyContent: 'flex-end'
   },
-  comment: {
+  commentDiv: {
+    paddingTop: 5,
+    paddingBottom: 0,
+    "&:last-child": {
+      paddingBottom: 0
+    },
+    borderTop: '1px solid #efefef'
+  },
+  commentInput: {
     flexGrow: 1
   },
   media: {
@@ -34,8 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
   postBtnTransparent: {
     color: '#0095F6',
-    opacity: 0.2
-    
+    opacity: 0.5
   },
   user: {
     fontWeight: 400,
@@ -45,6 +52,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     color: '#0000EE'
   },
+  cardActions: {
+    paddingBottom: 0
+  },
+  cardContent: {
+    paddingTop: 0,
+    paddingBottom: 5
+  }
 }));
 
 function ProjectCard({ data }) {
@@ -110,7 +124,6 @@ function ProjectCard({ data }) {
     }
   }
 
-
   return (
     <Card
       className={classes.root}
@@ -142,12 +155,14 @@ function ProjectCard({ data }) {
       />
       <CardActions
         disableSpacing
+        className={classes.cardActions}
       >
         <IconButton
           aria-label="Like"
           className={classes.button}
           disableRipple
           onClick={toggleLike}
+          size='small'
         >
           {state.isLiked
             ? <FavoriteIcon
@@ -160,6 +175,7 @@ function ProjectCard({ data }) {
             aria-label="Repository"
             className={classes.button}
             disableRipple
+            size='small'
           >
             <Link
               href={data.repo}
@@ -174,6 +190,7 @@ function ProjectCard({ data }) {
               aria-label="Repository"
               className={classes.button}
               disableRipple
+              size='small'
             >
               <Link
                 href={data.repo}
@@ -187,6 +204,7 @@ function ProjectCard({ data }) {
               aria-label="Repository"
               className={classes.button}
               disableRipple
+              size='small'
             >
               <Link
                 href={data.linkedin}
@@ -203,6 +221,7 @@ function ProjectCard({ data }) {
             aria-label="Link"
             className={classes.button}
             disableRipple
+            size='small'
           >
             <Link
               href={data.link}
@@ -215,7 +234,9 @@ function ProjectCard({ data }) {
           : null
         }
       </CardActions>
-      <CardContent>
+      <CardContent
+        className={classes.cardContent}
+      >
         <Typography
           variant="body2"
           color="textSecondary"
@@ -230,18 +251,20 @@ function ProjectCard({ data }) {
           </span>
         </Typography>
       </CardContent>
-      <CardContent>
+      <CardContent
+        className={classes.commentDiv}
+      >
         <form
           noValidate
           autoComplete="off"
           onSubmit={handleFormSubmit}
         >
           <FormControl
-            className={classes.commentDiv}
+            className={classes.commentForm}
             fullWidth
           >
             <InputBase
-              className={classes.comment}
+              className={classes.commentInput}
               placeholder='Add a comment...'
               inputProps={{ 'aria-label': 'Comment Area' }}
               multiline
