@@ -234,9 +234,16 @@ function ProjectCard({ data }) {
               }}
             />
             <Button
-              style={{
-                color: '#0095F6'
-              }}
+              style={
+                state.comment.replace(/\s/g, '') !== '' 
+                ? {
+                  color: '#0095F6'
+                  }
+                : {
+                  color: '#0095F6',
+                  opacity: 0.2
+                  }
+              }
               size='small'
               type='submit'
               disabled={state.comment.replace(/\s/g, '') !== '' ? false : true}
