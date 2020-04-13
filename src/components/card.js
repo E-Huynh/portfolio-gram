@@ -36,11 +36,24 @@ function ProjectCard({ data }) {
 
   const [state, setState] = useState({
     isLiked: false,
-    comments: []
+    comment: '',
+    pastComments: []
   })
 
   function toggleLike() {
     setState({ ...state, isLiked: !state.isLiked })
+  }
+
+  const handleOnChange = (event) => {
+    const name = event.target.name
+    const comment = event.target.value
+    setState({...state, [name]: comment})
+  }
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    state.pastComments.push(state.comment)
+    setState({...state, pastComments: state.pastComments})
   }
 
   function createHashtags(arr) {
@@ -170,7 +183,11 @@ function ProjectCard({ data }) {
         </Typography>
       </CardContent>
       <CardContent>
-        <form noValidate autoComplete="off">
+        <form
+          noValidate
+          autoComplete="off"
+          onSubmit={handleOnSubmit}  
+        >
           <FormControl
             style={{
               display: 'inline-flex',
@@ -186,12 +203,15 @@ function ProjectCard({ data }) {
               placeholder='Add a comment...'
               inputProps={{ 'aria-label': 'Comment Area' }}
               multiline
+              onChange={handleOnChange}
+              name='comment'
             />
             <Button
               style={{
                 color: '#0095F6'
               }}
               size='small'
+              type='submit'
             >
               Post
             </Button>
