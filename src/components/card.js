@@ -53,6 +53,7 @@ function ProjectCard({ data }) {
   const clearForm = (event) => {
     event.target.value = '';
     map = {};
+    // only fires when you use the POST button
     if(event.target.reset) { event.target.reset() };
   }
 
@@ -190,10 +191,10 @@ function ProjectCard({ data }) {
           autoComplete="off"
           onSubmit={(event) => {
             event.preventDefault();
+            // sets the event to the form event value
             if (!event.target.value) {
               event.target.value = event.target.elements[0].value;
             }
-            event.target.isButton = true
             handleOnSubmit(event)
           }}
         >
@@ -216,8 +217,9 @@ function ProjectCard({ data }) {
               onKeyDown={(event) => {
                 map[event.keyCode] = event.type === 'keydown';
                 if (!map['16'] && map['13']) {
-                  event.target.isButton = false
+                  // stop default action of event
                   event.preventDefault();
+                  // stops the /n from completing
                   event.stopPropagation();
                   handleOnSubmit(event);
                 } else if(map['16'] && map['13']) {
