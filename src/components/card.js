@@ -44,16 +44,16 @@ function ProjectCard({ data }) {
     setState({ ...state, isLiked: !state.isLiked })
   }
 
-  const handleOnChange = (event) => {
-    const name = event.target.name
-    const comment = event.target.value
-    setState({...state, [name]: comment})
-  }
-
   const handleOnSubmit = (event) => {
-    event.preventDefault();
-    state.pastComments.push(state.comment)
-    setState({...state, pastComments: state.pastComments})
+    state.pastComments.push(event.target.value)
+    setState({ ...state, pastComments: state.pastComments })
+    clearForm(event);
+  }
+  
+  const clearForm = (event) => {
+    event.target.value = '';
+    map = {};
+    if(event.target.reset) { event.target.reset() };
   }
 
   function createHashtags(arr) {
@@ -62,6 +62,8 @@ function ProjectCard({ data }) {
       return hashtags
     }
   }
+
+  let map = {};
 
   return (
     <Card
@@ -186,7 +188,14 @@ function ProjectCard({ data }) {
         <form
           noValidate
           autoComplete="off"
-          onSubmit={handleOnSubmit}  
+          onSubmit={(event) => {
+            event.preventDefault();
+            if (!event.target.value) {
+              event.target.value = event.target.elements[0].value;
+            }
+            event.target.isButton = true
+            handleOnSubmit(event)
+          }}
         >
           <FormControl
             style={{
@@ -203,8 +212,18 @@ function ProjectCard({ data }) {
               placeholder='Add a comment...'
               inputProps={{ 'aria-label': 'Comment Area' }}
               multiline
-              onChange={handleOnChange}
               name='comment'
+              onKeyDown={(event) => {
+                map[event.keyCode] = event.type === 'keydown';
+                if (!map['16'] && map['13']) {
+                  event.target.isButton = false
+                  event.preventDefault();
+                  event.stopPropagation();
+                  handleOnSubmit(event);
+                } else if(map['16'] && map['13']) {
+                  map = {};
+                }
+              }}
             />
             <Button
               style={{
