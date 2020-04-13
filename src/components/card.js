@@ -239,7 +239,7 @@ function ProjectCard({ data }) {
               }}
               size='small'
               type='submit'
-              disabled={state.comment !== '' ? false : true}
+              disabled={state.comment.replace(/\s/g, '') !== '' ? false : true}
             >
               Post
             </Button>
