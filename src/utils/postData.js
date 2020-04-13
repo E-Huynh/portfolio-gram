@@ -3,7 +3,7 @@ export const Data = [
         id: 'erik-huynh',
         title: 'About Me',
         image: 'https://e-huynh.github.io/updated_portfolio/assets/About_me.JPG',
-        description: 'SHORT BIO NEEDS TO GO HERE',
+        description: "Welcome to my Portfolio-gram!! My name is Erik and I'm a Full-Stack Web Developer that strives to learn and create web applications. I graduate from the University of Utah's 26-wk coding bootcamp, in May of 2020. Learn more about me and projects I've created by browsing my posts.",
         repo: 'https://github.com/E-Huynh',
         linkedin: 'https://www.linkedin.com/in/erik-huynh-228321196',
         link: '',
