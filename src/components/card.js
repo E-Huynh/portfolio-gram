@@ -12,6 +12,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
   },
+  commentDiv: {
+    display: 'inline-flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end'
+  },
+  comment: {
+    flexGrow: 1
+  },
   media: {
     height: 100,
     paddingTop: '56.25%', // 16:9
@@ -20,6 +28,14 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "transparent"
     }
+  },
+  postBtn: {
+    color: '#0095F6'
+  },
+  postBtnTransparent: {
+    color: '#0095F6',
+    opacity: 0.2
+    
   },
   user: {
     fontWeight: 400,
@@ -32,16 +48,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProjectCard({ data }) {
-  const classes = useStyles();
-  let map = {};
-
   const [state, setState] = useState({
     isLiked: false,
     comment: '',
     pastComments: []
   })
 
-  function toggleLike() {
+  const classes = useStyles();
+  const isCommentEmpty = state.comment.replace(/\s/g, '') !== '';
+  let map = {};
+
+  const toggleLike = () => {
     setState({ ...state, isLiked: !state.isLiked })
   }
 
@@ -49,6 +66,15 @@ function ProjectCard({ data }) {
     state.pastComments.push(event.target.value)
     setState({ ...state, pastComments: state.pastComments })
     clearForm(event);
+  }
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    // sets the event to the form event value
+    if (!event.target.value) {
+      event.target.value = event.target.elements[0].value;
+    }
+    handleOnSubmit(event)
   }
 
   const handleOnChange = (event) => {
@@ -64,12 +90,26 @@ function ProjectCard({ data }) {
     if(event.target.reset) { event.target.reset() };
   }
 
-  function createHashtags(arr) {
+  const handleShiftEnter = (event) => {
+    map[event.keyCode] = event.type === 'keydown';
+    if (!map['16'] && map['13']) {
+      // stop default action of event
+      event.preventDefault();
+      // stops the /n from completing
+      event.stopPropagation();
+      handleOnSubmit(event);
+    } else if(map['16'] && map['13']) {
+      map = {};
+    }
+  }
+
+  const createHashtags = (arr) => {
     if (arr) {
       const hashtags = '#' + arr.join(' #')
       return hashtags
     }
   }
+
 
   return (
     <Card
@@ -194,59 +234,26 @@ function ProjectCard({ data }) {
         <form
           noValidate
           autoComplete="off"
-          onSubmit={(event) => {
-            event.preventDefault();
-            // sets the event to the form event value
-            if (!event.target.value) {
-              event.target.value = event.target.elements[0].value;
-            }
-            handleOnSubmit(event)
-          }}
+          onSubmit={handleFormSubmit}
         >
           <FormControl
-            style={{
-              display: 'inline-flex',
-              flexDirection: 'row',
-              justifyContent: 'flex-end'
-            }}
+            className={classes.commentDiv}
             fullWidth
           >
             <InputBase
-              style={{
-                flexGrow: 1,
-              }}
+              className={classes.comment}
               placeholder='Add a comment...'
               inputProps={{ 'aria-label': 'Comment Area' }}
               multiline
               name='comment'
               onChange={handleOnChange}
-              onKeyDown={(event) => {
-                map[event.keyCode] = event.type === 'keydown';
-                if (!map['16'] && map['13']) {
-                  // stop default action of event
-                  event.preventDefault();
-                  // stops the /n from completing
-                  event.stopPropagation();
-                  handleOnSubmit(event);
-                } else if(map['16'] && map['13']) {
-                  map = {};
-                }
-              }}
+              onKeyDown={handleShiftEnter}
             />
             <Button
-              style={
-                state.comment.replace(/\s/g, '') !== '' 
-                ? {
-                  color: '#0095F6'
-                  }
-                : {
-                  color: '#0095F6',
-                  opacity: 0.2
-                  }
-              }
+              className={ isCommentEmpty ? classes.postBtn : classes.postBtnTransparent}
+              disabled={isCommentEmpty ? false : true}
               size='small'
               type='submit'
-              disabled={state.comment.replace(/\s/g, '') !== '' ? false : true}
             >
               Post
             </Button>
