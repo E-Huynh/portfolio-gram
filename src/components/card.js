@@ -10,7 +10,6 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
     maxWidth: 'unset'
   },
   commentForm: {
