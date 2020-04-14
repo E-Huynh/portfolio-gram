@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Card,
+import { Card,
   CardHeader,
   CardMedia,
   CardContent,
