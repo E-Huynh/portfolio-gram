@@ -11,6 +11,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    maxWidth: 'unset'
   },
   commentForm: {
     display: 'inline-flex',
@@ -131,7 +132,6 @@ function ProjectCard({ data }) {
   return (
     <Card
       className={classes.root}
-      style={{maxWidth: 'unset'}}
     >
       <CardHeader
         avatar={
