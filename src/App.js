@@ -2,7 +2,8 @@ import React from 'react';
 import NavBar from './components/navbar';
 import Card from './components/card';
 import { Container } from '@material-ui/core';
-import { Data } from './utils/postData'
+import { Data } from './utils/postData';
+import Highlight from './components/highlight';
 
 function App() {
   console.log(Data[1])

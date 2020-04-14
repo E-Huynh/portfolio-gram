@@ -10,7 +10,9 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
     box: {
-        maxWidth: '50%'
+        width: '60%',
+        display: 'flex',
+        justifyContent: 'space-between'
     },
     foo: {
         display: 'flex',
@@ -153,7 +155,7 @@ export default function NavBar() {
                                 inputProps={{ 'aria-label': 'search' }}
                             />
                         </div>
-                        <div className={classes.grow} />
+                        {/* <div className={classes.grow} /> */}
                         <div className={classes.sectionDesktop}>
                             <IconButton aria-label="show 4 new mails" color="inherit">
                                 <MailIcon />
