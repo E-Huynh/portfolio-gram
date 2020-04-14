@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
       <NavBar />
-      <section>
-        <Container style={{ marginTop: 100, maxWidth: '60%' }}>
+      <section style={{display: 'flex', justifyContent: 'space-between'}}>
+        <Container style={{ marginTop: 100, marginLeft: '20%', width: '70%', paddingLeft: 0 }}>
           {Data.map((el) => {
             return (
               <div key={el.id} style={{ paddingBottom: 50 }}>
@@ -19,6 +19,9 @@ function App() {
               </div>
             )
           })}
+        </Container>
+        <Container style={{ marginTop: 100, marginRight: '20%', width: '30%', paddingRight: 0 }}>
+          Highlights
         </Container>
       </section>
     </div>
