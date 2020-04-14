@@ -131,6 +131,7 @@ function ProjectCard({ data }) {
   return (
     <Card
       className={classes.root}
+      style={{maxWidth: 'unset'}}
     >
       <CardHeader
         avatar={
