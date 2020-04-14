@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'flex-end'
   },
+  commentDisplay: {
+    paddingTop: 0,
+    paddingBottom: 0
+  },
   commentDiv: {
     paddingTop: 5,
     paddingBottom: 0,
@@ -57,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     paddingTop: 0,
-    paddingBottom: 5
+    paddingBottom: 10
   }
 }));
 
@@ -94,14 +98,14 @@ function ProjectCard({ data }) {
   const handleOnChange = (event) => {
     const name = event.target.name
     const comment = event.target.value
-    setState({...state, [name]: comment})
+    setState({ ...state, [name]: comment })
   }
-  
+
   const clearForm = (event) => {
     event.target.value = '';
     map = {};
     // only fires when you use the POST button
-    if(event.target.reset) { event.target.reset() };
+    if (event.target.reset) { event.target.reset() };
   }
 
   const handleShiftEnter = (event) => {
@@ -112,7 +116,7 @@ function ProjectCard({ data }) {
       // stops the /n from completing
       event.stopPropagation();
       handleOnSubmit(event);
-    } else if(map['16'] && map['13']) {
+    } else if (map['16'] && map['13']) {
       map = {};
     }
   }
@@ -216,7 +220,7 @@ function ProjectCard({ data }) {
             </IconButton>
           </>
         }
-        {data.link && 
+        {data.link &&
           <IconButton
             aria-label="Link"
             className={classes.button}
@@ -250,6 +254,22 @@ function ProjectCard({ data }) {
           </span>
         </Typography>
       </CardContent>
+      {state.pastComments.map((comment) => {
+        return (
+          <CardContent
+            className={classes.commentDisplay}
+          >
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
+              <span className={classes.user}>Future Employer&nbsp;</span> {comment}
+            </Typography>
+          </CardContent>
+        )
+      })}
+      <br/>
       <CardContent
         className={classes.commentDiv}
       >
@@ -265,14 +285,14 @@ function ProjectCard({ data }) {
             <InputBase
               className={classes.commentInput}
               placeholder='Add a comment...'
-              inputProps={{ 'aria-label': 'Comment Area' }}
+              inputProps={{ 'aria-label': 'Comment Area' , style: { fontSize: '0.875rem' }}}
               multiline
               name='comment'
               onChange={handleOnChange}
               onKeyDown={handleShiftEnter}
             />
             <Button
-              className={ isCommentEmpty ? classes.postBtn : classes.postBtnTransparent}
+              className={isCommentEmpty ? classes.postBtn : classes.postBtnTransparent}
               disabled={isCommentEmpty ? false : true}
               size='small'
               type='submit'
