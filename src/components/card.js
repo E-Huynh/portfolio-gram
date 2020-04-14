@@ -216,8 +216,8 @@ function ProjectCard({ data }) {
             </IconButton>
           </>
         }
-        {data.link
-          ? <IconButton
+        {data.link && 
+          <IconButton
             aria-label="Link"
             className={classes.button}
             disableRipple
@@ -231,7 +231,6 @@ function ProjectCard({ data }) {
               <LinkIcon />
             </Link>
           </IconButton>
-          : null
         }
       </CardActions>
       <CardContent
