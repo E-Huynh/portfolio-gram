@@ -5,7 +5,7 @@ import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutline
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+// import MoreVertIcon from '@material-ui/icons/MoreVert';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
@@ -139,15 +139,15 @@ function ProjectCard({ data }) {
             src={'https://avatars0.githubusercontent.com/u/56613046?s=460&u=dd342c337117a7ef40ee31b67df2c0b4c310f2cc&v=4'}
           />
         }
-        action={
-          <IconButton
-            aria-label="Options"
-            className={classes.button}
-            disableRipple
-          >
-            <MoreVertIcon />
-          </IconButton>
-        }
+        // action={
+        //   <IconButton
+        //     aria-label="Options"
+        //     className={classes.button}
+        //     disableRipple
+        //   >
+        //     <MoreVertIcon />
+        //   </IconButton>
+        // }
         title={<span className={classes.user}>Erik Huynh</span>}
         subheader={data.title}
       />
