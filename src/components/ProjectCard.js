@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Link, Button, FormControl, InputBase } from '@material-ui/core'
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Avatar, IconButton, Typography, Link, Button, FormControl, InputBase, Tooltip } from '@material-ui/core'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -161,35 +161,24 @@ function ProjectCard({ data }) {
         disableSpacing
         className={classes.cardActions}
       >
-        <IconButton
-          aria-label="Like"
-          className={classes.button}
-          disableRipple
-          onClick={toggleLike}
-          size='small'
-        >
-          {state.isLiked
-            ? <FavoriteIcon
-              color="secondary"
-            />
-            : <FavoriteBorderOutlinedIcon />}
-        </IconButton>
-        {data.id !== 'erik-huynh'
-          ? <IconButton
-            aria-label="Repository"
+        <Tooltip title='Like'>
+          <IconButton
+            aria-label="Like"
             className={classes.button}
             disableRipple
+            onClick={toggleLike}
             size='small'
           >
-            <Link
-              href={data.repo}
-              target="_blank"
-              color={'inherit'}
-            >
-              <GitHubIcon />
-            </Link>
+
+            {state.isLiked
+              ? <FavoriteIcon
+                color="secondary"
+              />
+              : <FavoriteBorderOutlinedIcon />}
           </IconButton>
-          : <>
+        </Tooltip>
+        {data.id !== 'erik-huynh'
+          ? <Tooltip title="Github">
             <IconButton
               aria-label="Repository"
               className={classes.button}
@@ -204,37 +193,59 @@ function ProjectCard({ data }) {
                 <GitHubIcon />
               </Link>
             </IconButton>
+          </Tooltip>
+          : <>
+            <Tooltip title="Github">
+              <IconButton
+                aria-label="Repository"
+                className={classes.button}
+                disableRipple
+                size='small'
+              >
+                <Link
+                  href={data.repo}
+                  target="_blank"
+                  color={'inherit'}
+                >
+                  <GitHubIcon />
+                </Link>
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="LinkedIn">
+              <IconButton
+                aria-label="Repository"
+                className={classes.button}
+                disableRipple
+                size='small'
+              >
+                <Link
+                  href={data.linkedin}
+                  target="_blank"
+                  color={'inherit'}
+                >
+                  <LinkedInIcon />
+                </Link>
+              </IconButton>
+            </Tooltip>
+          </>
+        }
+        {data.link &&
+          <Tooltip title='Visit App'>
             <IconButton
-              aria-label="Repository"
+              aria-label="Link"
               className={classes.button}
               disableRipple
               size='small'
             >
               <Link
-                href={data.linkedin}
+                href={data.link}
                 target="_blank"
                 color={'inherit'}
               >
-                <LinkedInIcon />
+                <LinkIcon />
               </Link>
             </IconButton>
-          </>
-        }
-        {data.link &&
-          <IconButton
-            aria-label="Link"
-            className={classes.button}
-            disableRipple
-            size='small'
-          >
-            <Link
-              href={data.link}
-              target="_blank"
-              color={'inherit'}
-            >
-              <LinkIcon />
-            </Link>
-          </IconButton>
+          </Tooltip>
         }
       </CardActions>
       <CardContent
@@ -269,7 +280,7 @@ function ProjectCard({ data }) {
           </CardContent>
         )
       })}
-      <br/>
+      <br />
       <CardContent
         className={classes.commentDiv}
       >
@@ -285,7 +296,7 @@ function ProjectCard({ data }) {
             <InputBase
               className={classes.commentInput}
               placeholder='Add a comment...'
-              inputProps={{ 'aria-label': 'Comment Area' , style: { fontSize: '0.875rem' }}}
+              inputProps={{ 'aria-label': 'Comment Area', style: { fontSize: '0.875rem' } }}
               multiline
               name='comment'
               onChange={handleOnChange}
