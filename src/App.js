@@ -53,13 +53,13 @@ function App() {
               component="div"
             >
               Highlights
-              </Typography>
-            {HighlightsData.map((el) => {
-              return (
-                <div key={el.id}>
-                  <Highlights data={el} />
-                </div>
-              )
+            </Typography>
+              {HighlightsData.map((el) => {
+                return (
+                  <div key={el.id}>
+                    <Highlights data={el} />
+                  </div>
+                )
             })}
           </Card>
         </Container>
