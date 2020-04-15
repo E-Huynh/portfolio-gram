@@ -136,7 +136,7 @@ function ProjectCard({ data }) {
         avatar={
           <Avatar
             aria-label="Erik Huynh"
-            src={'https://avatars0.githubusercontent.com/u/56613046?s=460&u=dd342c337117a7ef40ee31b67df2c0b4c310f2cc&v=4'}
+            src={'https://e-huynh.github.io/updated_portfolio/assets/About_me.JPG'}
           />
         }
         // action={
