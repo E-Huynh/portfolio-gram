@@ -22,10 +22,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 100,
     marginRight: '20%',
     width: '30%',
-    paddingRight: 0
+    paddingRight: 0,
   },
   postSpacing: {
     paddingBottom: 50
+  },
+  highlightsDiv: {
+    position: 'fixed'
   }
 }));
 
@@ -46,7 +49,7 @@ function App() {
           })}
         </Container>
         <Container className={classes.rightColumn}>
-          <Card>
+          <Card className={classes.highlightsDiv}>
             <Typography
               variant="body2"
               color="textPrimary"
