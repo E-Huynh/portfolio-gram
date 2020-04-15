@@ -11,6 +11,7 @@ function Highlights({ data }) {
                 fullWidth
                 disableElevation={true}
                 startIcon={<Avatar src={data.avatar}></Avatar>}
+                onClick={data.alert}
             >
                 <Typography
                     variant="body2"
