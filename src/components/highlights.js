@@ -1,19 +1,24 @@
 import React from 'react';
-import { Card, Button } from '@material-ui/core';
+import { Card, Button, Typography } from '@material-ui/core';
 // import SaveIcon from '@material-ui/icons/Save';
 import Avatar from '@material-ui/core/Avatar';
 
-function Highlights() {
+function Highlights({ data }) {
     return (
         <Card>
             <Button
-                variant="contained"
-                color="primary"
-                size="large"
+                size="medium"
                 fullWidth
-                startIcon={<Avatar src='https://avatars0.githubusercontent.com/u/56613046?s=460&u=dd342c337117a7ef40ee31b67df2c0b4c310f2cc&v=4'></Avatar>}
+                disableElevation={true}
+                startIcon={<Avatar src={data.avatar}></Avatar>}
             >
-                Who Am I?
+                <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="div"
+                >
+                    {data.text}
+                </Typography>
             </Button>
         </Card>
     )

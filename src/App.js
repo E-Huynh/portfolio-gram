@@ -1,9 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from './components/navbar';
-import Card from './components/card';
-import { Container } from '@material-ui/core';
+import ProjectCard from './components/ProjectCard';
+import { Container, Typography, Card } from '@material-ui/core';
 import { Data } from './utils/postData';
+import { HighlightsData } from './utils/highlightsData';
 import Highlights from './components/highlights';
 
 const useStyles = makeStyles((theme) => ({
@@ -39,13 +40,28 @@ function App() {
           {Data.map((el) => {
             return (
               <div key={el.id} className={classes.postSpacing}>
-                <Card data={el} />
+                <ProjectCard data={el} />
               </div>
             )
           })}
         </Container>
         <Container className={classes.rightColumn}>
-          <Highlights/>
+          <Card>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              component="div"
+            >
+              Highlights
+              </Typography>
+            {HighlightsData.map((el) => {
+              return (
+                <div key={el.id}>
+                  <Highlights data={el} />
+                </div>
+              )
+            })}
+          </Card>
         </Container>
       </section>
     </div>
