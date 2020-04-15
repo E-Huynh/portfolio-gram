@@ -2,28 +2,12 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from './components/navbar';
 import ProjectCard from './components/ProjectCard';
-import { Container, Typography, Card, Grid } from '@material-ui/core';
+import { Container, Typography, Card, Grid, useMediaQuery } from '@material-ui/core';
 import { Data } from './utils/postData';
 import { HighlightsData } from './utils/highlightsData';
 import Highlights from './components/highlights';
 
 const useStyles = makeStyles((theme) => ({
-  displayFlex: {
-    display: 'flex',
-    justifyContent: 'space-between'
-  },
-  leftColumn: {
-    marginTop: 100,
-    marginLeft: '20%',
-    width: '70%',
-    paddingLeft: 0
-  },
-  rightColumn: {
-    marginTop: 100,
-    marginRight: '20%',
-    width: '30%',
-    paddingRight: 0,
-  },
   topSpacing: {
     marginTop: 75
   },
@@ -31,12 +15,14 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 50
   },
   highlightsDiv: {
-    position: 'fixed'
+    position: 'fixed',
+    maxWidth: '100%'
   }
 }));
 
 function App() {
   const classes = useStyles();
+  const isColumn = useMediaQuery('(max-width: 959px');
 
   return (<>
     <Grid container spacing={3}>
@@ -44,8 +30,10 @@ function App() {
         <NavBar />
       </Grid>
     </Grid>
-    <Grid container spacing={3}>
-      <Grid item sm={12} md={2}/>
+    <Grid container spacing={3} 
+      direction={isColumn ? 'column-reverse': 'row' }
+    >
+      <Grid item sm={12} md={2} />
       <Grid item md={5} className={classes.topSpacing}>
         <Container>
           {Data.map((el) => {
@@ -59,7 +47,9 @@ function App() {
       </Grid>
       <Grid item sm={12} md={3} className={classes.topSpacing}>
         <Container>
-          <Card>
+          <Card
+            // className={classes.highlightsDiv}
+          >
             <Typography
               variant="body2"
               color="textPrimary"
