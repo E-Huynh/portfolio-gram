@@ -7,7 +7,7 @@ export const Data = [
         repo: 'https://github.com/E-Huynh',
         linkedin: 'https://www.linkedin.com/in/erik-huynh-228321196',
         link: '',
-        tech: ['FullStack', 'WebDeveloper', 'UniversityOfUtah', 'React.js','FutureEmployee']
+        tech: ['FullStack', 'WebDeveloper', 'UniversityOfUtah', 'React', 'Material-UI','FutureEmployee']
     },
     {
         id: 'stock-watcher',

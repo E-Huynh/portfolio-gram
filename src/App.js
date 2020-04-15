@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from './components/navbar';
 import ProjectCard from './components/ProjectCard';
-import { Container, Typography, Card } from '@material-ui/core';
+import { Container, Typography, Card, Grid } from '@material-ui/core';
 import { Data } from './utils/postData';
 import { HighlightsData } from './utils/highlightsData';
 import Highlights from './components/highlights';
@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     width: '30%',
     paddingRight: 0,
   },
+  topSpacing: {
+    marginTop: 75
+  },
   postSpacing: {
     paddingBottom: 50
   },
@@ -35,11 +38,16 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
 
-  return (
-    <div>
-      <NavBar />
-      <section className={classes.displayFlex}>
-        <Container className={classes.leftColumn}>
+  return (<>
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <NavBar />
+      </Grid>
+    </Grid>
+    <Grid container spacing={3}>
+      <Grid item sm={12} md={2}/>
+      <Grid item md={5} className={classes.topSpacing}>
+        <Container>
           {Data.map((el) => {
             return (
               <div key={el.id} className={classes.postSpacing}>
@@ -48,8 +56,10 @@ function App() {
             )
           })}
         </Container>
-        <Container className={classes.rightColumn}>
-          <Card className={classes.highlightsDiv}>
+      </Grid>
+      <Grid item sm={12} md={3} className={classes.topSpacing}>
+        <Container>
+          <Card>
             <Typography
               variant="body2"
               color="textPrimary"
@@ -66,8 +76,10 @@ function App() {
             })}
           </Card>
         </Container>
-      </section>
-    </div>
+      </Grid>
+      <Grid item sm={12} md={2}/>
+    </Grid>
+    </>
   );
 }
 
