@@ -8,6 +8,7 @@ import LinkIcon from '@material-ui/icons/Link';
 // import MoreVertIcon from '@material-ui/icons/MoreVert';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InsertDriveFileOutlinedIcon from '@material-ui/icons/InsertDriveFileOutlined';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -241,6 +242,22 @@ function ProjectCard({ data }) {
                   color={'inherit'}
                 >
                   <InsertDriveFileOutlinedIcon />
+                </Link>
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Call Me">
+              <IconButton
+                aria-label="Repository"
+                className={classes.button}
+                disableRipple
+                size='small'
+              >
+                <Link
+                  // href={data.linkedin}
+                  target="_blank"
+                  color={'inherit'}
+                >
+                  <PhoneIcon />
                 </Link>
               </IconButton>
             </Tooltip>
