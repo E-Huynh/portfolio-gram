@@ -24,7 +24,7 @@ function App() {
   const classes = useStyles();
   const isColumn = useMediaQuery('(max-width: 959px');
   const [ state, setState ] = useState({
-    postType: 'project'
+    postType: ''
   })
 
   return (<>
@@ -39,7 +39,8 @@ function App() {
       <Grid item sm={12} md={2} />
       <Grid item md={5} className={classes.topSpacing}>
         <Container>
-          {Data.filter((el => el.type === state.postType))
+          { state.postType !== '' 
+          ? Data.filter(el => el.type === state.postType)
                .map((el) => {
                   return (
                     <div key={el.id} className={classes.postSpacing}>
@@ -47,7 +48,16 @@ function App() {
                     </div>
                   )
                 }
-          )}
+          )
+         : Data.map((el) => {
+            return (
+              <div key={el.id} className={classes.postSpacing}>
+                <ProjectCard data={el} />
+              </div>
+            )
+          }
+    )
+        }
         </Container>
       </Grid>
       <Grid item sm={12} md={3} className={classes.topSpacing}>
