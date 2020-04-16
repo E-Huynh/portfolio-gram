@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from './components/navbar';
 import ProjectCard from './components/ProjectCard';
@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const isColumn = useMediaQuery('(max-width: 959px');
+  const [ state, setState ] = useState({
+    postType: ''
+  })
 
   return (<>
     <Grid container spacing={3}>
@@ -36,13 +39,25 @@ function App() {
       <Grid item sm={12} md={2} />
       <Grid item md={5} className={classes.topSpacing}>
         <Container>
-          {Data.map((el) => {
+          { state.postType !== '' 
+          ? Data.filter(el => el.type === state.postType)
+               .map((el) => {
+                  return (
+                    <div key={el.id} className={classes.postSpacing}>
+                      <ProjectCard data={el} />
+                    </div>
+                  )
+                }
+          )
+         : Data.map((el) => {
             return (
               <div key={el.id} className={classes.postSpacing}>
                 <ProjectCard data={el} />
               </div>
             )
-          })}
+          }
+    )
+        }
         </Container>
       </Grid>
       <Grid item sm={12} md={3} className={classes.topSpacing}>
@@ -60,7 +75,7 @@ function App() {
               {HighlightsData.map((el) => {
                 return (
                   <div key={el.id}>
-                    <Highlights data={el} />
+                    <Highlights data={el} setState={setState} />
                   </div>
                 )
             })}
