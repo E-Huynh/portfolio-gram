@@ -7,7 +7,8 @@ export const Data = [
         repo: 'https://github.com/E-Huynh',
         linkedin: 'https://www.linkedin.com/in/erik-huynh-228321196',
         link: '',
-        tech: ['FullStack', 'WebDeveloper', 'UniversityOfUtah', 'React', 'Material-UI','FutureEmployee']
+        tech: ['FullStack', 'WebDeveloper', 'UniversityOfUtah', 'React', 'Material-UI','FutureEmployee'],
+        type: 'bio'
     },
     {
         id: 'stock-watcher',
@@ -16,7 +17,8 @@ export const Data = [
         description: 'Application allows users to search and view stock information. Users are able to organize and save stocks into watchlists.',
         repo: 'https://github.com/E-Huynh/stock-shares-viewer',
         link: 'https://young-everglades-16655.herokuapp.com/',
-        tech: ['Bulma', 'MySQL', 'Sequelize', 'Express', 'AJAX/Axios', 'IEXcloud']
+        tech: ['Bulma', 'MySQL', 'Sequelize', 'Express', 'AJAX/Axios', 'IEXcloud'],
+        type: 'project'
     },
     {
         id: 'burger-wishlist',
@@ -25,7 +27,8 @@ export const Data = [
         description: 'Application that stores and displays users burger wishlist. The client displays and allows the user to interact with the database.',
         repo: 'https://github.com/E-Huynh/burger-wishlist',
         link: 'https://young-everglades-16655.herokuapp.com/',
-        tech: ['ExpressHandlebars', 'MVC', 'MySQL', 'ORM']
+        tech: ['ExpressHandlebars', 'MVC', 'MySQL', 'ORM'],
+        type: 'project'
     },
     {
         id: 'employee-tracker',
@@ -34,7 +37,8 @@ export const Data = [
         description: 'CLI application that lets users store, add, delete, and update employee information from a mysql database.',
         repo: 'https://github.com/E-Huynh/employee_tracker',
         link: '',
-        tech: ['Express', 'MySQL', 'Inquirer']
+        tech: ['Express', 'MySQL', 'Inquirer'],
+        type: 'project'
     },
     {
         id: 'note-taker',
@@ -43,7 +47,8 @@ export const Data = [
         description: 'Application that allows users to store, view and delete notes.',
         repo: 'https://github.com/E-Huynh/note_taker',
         link: 'https://secure-waters-63965.herokuapp.com/',
-        tech: ['Bootstrap', 'FileSystem', 'Path', 'Jquery']
+        tech: ['Bootstrap', 'FileSystem', 'Path', 'Jquery'],
+        type: 'project'
     },
     {
         id: 'team-profile-generator',
@@ -52,7 +57,8 @@ export const Data = [
         description: 'Application that use CLI to input employee information. HTML file automatically generated display team info.',
         repo: 'https://github.com/E-Huynh/Team_Profile_Generator',
         link: '',
-        tech: ['Bulma', 'Node.js', 'FileSystem', 'Inquirer']
+        tech: ['Bulma', 'Node.js', 'FileSystem', 'Inquirer'],
+        type: 'project'
     },
     {
         id: 'github-pdf-generator',
@@ -61,7 +67,8 @@ export const Data = [
         description: 'Application scrapes github API by username search to generate a PDF resume.',
         repo: 'https://github.com/E-Huynh/github-pdf',
         link: '',
-        tech: ['Axios', 'Puppeteer', 'Inquirer']
+        tech: ['Axios', 'Puppeteer', 'Inquirer'],
+        type: 'project'
     },
     {
         id: 'fast-hikes',
@@ -70,7 +77,8 @@ export const Data = [
         description: 'Application takes in driving duration and hike length from current location and returns hikes nearby that meet the search criteria.',
         repo: 'https://github.com/E-Huynh/FastHikes',
         link: 'https://e-huynh.github.io/FastHikes/',
-        tech: ['CssGrid', 'Flexbox', 'Jquery', 'HikingProjectAPI', 'GoogleDistanceAPI']
+        tech: ['CssGrid', 'Flexbox', 'Jquery', 'HikingProjectAPI', 'GoogleDistanceAPI'],
+        type: 'project'
     },
     {
         id: 'weather-dashboard',
@@ -79,7 +87,8 @@ export const Data = [
         description: 'Be prepared for whatever the weather throws at you. Allows the user to search for the current and 5-day forecast of any city.',
         repo: 'https://github.com/E-Huynh/weather_dashboard',
         link: 'https://e-huynh.github.io/weather_dashboard/index.html',
-        tech: ['CssGrid', 'Flexbox', 'LocalStorage', 'Moment.js', 'OpenWeatherAPI']
+        tech: ['CssGrid', 'Flexbox', 'LocalStorage', 'Moment.js', 'OpenWeatherAPI'],
+        type: 'project'
     },
     {
         id: 'work-day-scheduler',
@@ -88,7 +97,8 @@ export const Data = [
         description: 'Track your daily schedule. Users can input their schedule by hour to plan out their day.',
         repo: 'https://github.com/E-Huynh/work-day-scheduler',
         link: 'https://e-huynh.github.io/work-day-scheduler/',
-        tech: ['HTML', 'CSS', 'Jquery']
+        tech: ['HTML', 'CSS', 'Jquery'],
+        type: 'project'
     },
     {
         id: 'quiz-game',
@@ -97,7 +107,8 @@ export const Data = [
         description: 'Test your knowledge with this programming related interactice quiz with timer and a highscore tracker.',
         repo: 'https://github.com/E-Huynh/quiz_game',
         link: 'https://e-huynh.github.io/quiz_game/quiz_game.html',
-        tech: ['DOM', 'Javascript', 'CSS']
+        tech: ['DOM', 'Javascript', 'CSS'],
+        type: 'project'
     },
     {
         id: 'password-generator',
@@ -106,7 +117,8 @@ export const Data = [
         description: 'Quickly generate passwords with user specified inputs of character type and length.',
         repo: 'https://github.com/E-Huynh/Password_Generator',
         link: 'https://e-huynh.github.io/Password_Generator/',
-        tech: ['Bootstrap', 'Javascript']
+        tech: ['Bootstrap', 'Javascript'],
+        type: 'project'
     },
     {
         id: 'rgb-game',
@@ -115,6 +127,7 @@ export const Data = [
         description: 'Test your knowledge of RGB color values by choosing the right tile. Easy and hard modes available.',
         repo: 'https://github.com/E-Huynh/RGB_game',
         link: 'https://e-huynh.github.io/RGB_game/',
-        tech: ['HTML', 'CSS', 'Jquery']
+        tech: ['HTML', 'CSS', 'Jquery'],
+        type: 'project'
     },
 ]
