@@ -5,11 +5,10 @@ import Avatar from '@material-ui/core/Avatar';
 
 function Highlights({ data }) {
     return (
-        <Card>
+        <Card style={{borderRadius: 0}}>
             <Button
                 size="medium"
                 fullWidth
-                disableElevation={true}
                 startIcon={<Avatar src={data.avatar}></Avatar>}
                 onClick={data.alert}
             >
