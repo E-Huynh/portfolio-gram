@@ -65,7 +65,7 @@ function App() {
               {HighlightsData.map((el) => {
                 return (
                   <div key={el.id}>
-                    <Highlights data={el} />
+                    <Highlights data={el} setState={setState} />
                   </div>
                 )
             })}
