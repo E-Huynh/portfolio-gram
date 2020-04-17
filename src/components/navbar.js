@@ -1,11 +1,16 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, IconButton, Typography, InputBase, MenuItem, Menu} from '@material-ui/core'
+import { AppBar, Toolbar, IconButton, Typography, InputBase, MenuItem, Menu, Link, Tooltip } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import PhoneIcon from '@material-ui/icons/Phone';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import MailIcon from '@material-ui/icons/Mail'
+import InsertDriveFileOutlinedIcon from '@material-ui/icons/InsertDriveFileOutlined';
+import Resume from '../assets/ErikHuynhResume.pdf'
+import AlertDialog from './dialog'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -14,16 +19,13 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between'
     },
-    foo: {
+    nav: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
     },
     grow: {
         flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
     },
     title: {
         display: 'none',
@@ -80,6 +82,13 @@ const useStyles = makeStyles((theme) => ({
             display: 'none',
         },
     },
+    button: {
+        color: '#fff',
+        "&:hover": {
+            backgroundColor: "transparent",
+            color: '#fff'
+        }
+    }
 }));
 
 export default function NavBar() {
@@ -96,8 +105,6 @@ export default function NavBar() {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
-    const menuId = 'primary-search-account-menu';
-
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
@@ -109,85 +116,201 @@ export default function NavBar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                    <MailIcon />
-                </IconButton>
-                <p>Messages</p>
-            </MenuItem>
-            <MenuItem>
-                <IconButton aria-label="show 11 new notifications" color="inherit">
-                    <NotificationsIcon />
-                </IconButton>
-                <p>Notifications</p>
-            </MenuItem>
-            <MenuItem >
-                <IconButton
-                    aria-label="account of current user"
-                    aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
-                    color="inherit"
-                >
-                    <AccountCircle />
-                </IconButton>
-                <p>Profile</p>
-            </MenuItem>
+            <Link
+                href='https://github.com/E-Huynh'
+                target="_blank"
+                color={'inherit'}
+            >
+                <MenuItem>
+                    <IconButton
+                        aria-label="Repository"
+                        disableRipple
+                    >
+                        <GitHubIcon />
+                    </IconButton>
+                    <p>Github</p>
+                </MenuItem>
+            </Link>
+            <Link
+                href='https://www.linkedin.com/in/erik-huynh-228321196'
+                target="_blank"
+                color={'inherit'}
+            >
+                <MenuItem>
+                    <IconButton
+                        aria-label="Repository"
+                        disableRipple
+                    >
+                        <LinkedInIcon />
+                    </IconButton>
+                    <p>LinkedIn</p>
+                </MenuItem>
+            </Link>
+            <Link
+                target="_blank"
+                color={'inherit'}
+                href={Resume}
+            >
+                <MenuItem >
+                    <IconButton
+                        aria-label="Repository"
+                        disableRipple
+                    >
+                        <InsertDriveFileOutlinedIcon />
+                    </IconButton>
+                    <p>Resume</p>
+                </MenuItem>
+            </Link>
+            <Link
+                href="tel:801-699-3049"
+                target="_blank"
+                color={'inherit'}
+            >
+                <MenuItem>
+                    <IconButton
+                        aria-label="Repository"
+                        disableRipple
+                    >
+                        <PhoneIcon />
+                    </IconButton>
+                    <p> 801-699-3049</p>
+                </MenuItem>
+            </Link>
+            <Link
+                href="mailto:Erik.W.Huynh@gmail.com"
+                target="_blank"
+                color={'inherit'}
+            >
+                <MenuItem>
+                    <IconButton
+                        aria-label="Repository"
+                        disableRipple
+                    >
+                        <MailIcon />
+                    </IconButton>
+                    <p> Erik.W.Huynh@Gmail.com</p>
+                </MenuItem>
+            </Link>
         </Menu>
     );
 
     return (
-            <div className={classes.grow}>
-                <AppBar className={classes.foo} position={'fixed'}>
-                    <Toolbar className={classes.box}>
-                        <Typography className={classes.title} variant="h6" noWrap>
-                            Portfolio-gram
+        <div className={classes.grow}>
+            <AppBar className={classes.nav} position={'fixed'}>
+                <Toolbar className={classes.box}>
+                    <Typography className={classes.title} variant="h6" noWrap>
+                        Portfolio-gram
                         </Typography>
-                        <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                                <SearchIcon />
-                            </div>
-                            <InputBase
-                                placeholder="Search…"
-                                classes={{
-                                    root: classes.inputRoot,
-                                    input: classes.inputInput,
-                                }}
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
+                    <div className={classes.search}>
+                        <div className={classes.searchIcon}>
+                            <SearchIcon />
                         </div>
-                        {/* <div className={classes.grow} /> */}
-                        <div className={classes.sectionDesktop}>
-                            <IconButton aria-label="show 4 new mails" color="inherit">
-                                <MailIcon />
-                            </IconButton>
-                            <IconButton aria-label="show 17 new notifications" color="inherit">
-                                <NotificationsIcon />
-                            </IconButton>
+                        <InputBase
+                            placeholder="Search…"
+                            classes={{
+                                root: classes.inputRoot,
+                                input: classes.inputInput,
+                            }}
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </div>
+                    <div className={classes.sectionDesktop}>
+                        <Tooltip title='Github'>
                             <IconButton
-                                edge="end"
-                                aria-label="account of current user"
-                                aria-controls={menuId}
-                                aria-haspopup="true"
-
-                                color="inherit"
+                                aria-label="Repository"
+                                className={classes.button}
+                                disableRipple
+                                size='small'
                             >
-                                <AccountCircle />
+                                <Link
+                                    href='https://github.com/E-Huynh'
+                                    target="_blank"
+                                    color={'inherit'}
+                                >
+                                    <GitHubIcon />
+                                </Link>
                             </IconButton>
-                        </div>
-                        <div className={classes.sectionMobile}>
+                        </Tooltip>
+                        <Tooltip title='LinkedIn'>
                             <IconButton
-                                aria-label="show more"
-                                aria-controls={mobileMenuId}
-                                aria-haspopup="true"
-                                onClick={handleMobileMenuOpen}
-                                color="inherit"
+                                aria-label="Repository"
+                                className={classes.button}
+                                disableRipple
+                                size='small'
                             >
-                                <MoreIcon />
+                                <Link
+                                    href='https://www.linkedin.com/in/erik-huynh-228321196'
+                                    target="_blank"
+                                    color={'inherit'}
+                                >
+                                    <LinkedInIcon />
+                                </Link>
                             </IconButton>
-                        </div>
-                    </Toolbar>
-                </AppBar>
-                {renderMobileMenu}
-            </div>
+                        </Tooltip>
+                        <Tooltip title='Resume'>
+                            <IconButton
+                                aria-label="Repository"
+                                className={classes.button}
+                                disableRipple
+                                size='small'
+                            >
+                                <Link
+                                    // href={data.linkedin}
+                                    target="_blank"
+                                    color={'inherit'}
+                                    href={Resume}
+                                >
+                                    <InsertDriveFileOutlinedIcon />
+                                </Link>
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title='Email'>
+                            <IconButton
+                                aria-label="Repository"
+                                className={classes.button}
+                                disableRipple
+                                size='small'
+                            >
+                                <Link
+                                    target="_blank"
+                                    color={'inherit'}
+                                    href='mailto:Erik.W.Huynh@gmail.com'
+                                >
+                                    <MailIcon />
+                                </Link>
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Contact me">
+                            <IconButton
+                                aria-label="Repository"
+                                className={classes.button}
+                                disableRipple
+                                size='small'
+                            >
+                                <Link
+                                    // href={data.linkedin}
+                                    target="_blank"
+                                    color={'inherit'}
+                                >
+                                    <AlertDialog />
+                                </Link>
+                            </IconButton>
+                        </Tooltip>
+                    </div>
+                    <div className={classes.sectionMobile}>
+                        <IconButton
+                            aria-label="show more"
+                            aria-controls={mobileMenuId}
+                            aria-haspopup="true"
+                            onClick={handleMobileMenuOpen}
+                            color="inherit"
+                        >
+                            <MoreIcon />
+                        </IconButton>
+                    </div>
+                </Toolbar>
+            </AppBar>
+            {renderMobileMenu}
+        </div>
     );
 }

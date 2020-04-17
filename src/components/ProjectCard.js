@@ -247,7 +247,7 @@ function ProjectCard({ data }) {
                 </Link>
               </IconButton>
             </Tooltip>
-            <Tooltip title="Call Me">
+            <Tooltip title="Contact Me">
               <IconButton
                 aria-label="Repository"
                 className={classes.button}
