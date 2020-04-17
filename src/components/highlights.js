@@ -5,7 +5,7 @@ import { Card, Button, Typography } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles((theme) => ({
-    foo: {
+    button: {
       justifyContent: 'unset'
     },
   }));
@@ -22,7 +22,7 @@ function Highlights({ data, setState }) {
             onClick={handleFilter}
         >
             <Button
-                classes={{ label: classes.foo }}
+                classes={{ label: classes.button }}
                 size="medium"
                 fullWidth
                 startIcon={
