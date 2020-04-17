@@ -9,6 +9,7 @@ import LinkIcon from '@material-ui/icons/Link';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InsertDriveFileOutlinedIcon from '@material-ui/icons/InsertDriveFileOutlined';
 import AlertDialog from './dialog';
+import Resume from '../assets/ErikHuynhResume.pdf'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,7 +65,13 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     paddingTop: 0,
     paddingBottom: 10
-  }
+  },
+  // 'a:link': {
+  //   color: '#0000EE'
+  // },
+  // 'a:visited': {
+  //   color: '#0000EE'
+  // }
 }));
 
 function ProjectCard({ data }) {
@@ -240,8 +247,9 @@ function ProjectCard({ data }) {
                   // href={data.linkedin}
                   target="_blank"
                   color={'inherit'}
+                  href={Resume}
                 >
-                  <InsertDriveFileOutlinedIcon />
+                  <InsertDriveFileOutlinedIcon/>
                 </Link>
               </IconButton>
             </Tooltip>
