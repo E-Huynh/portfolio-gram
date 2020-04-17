@@ -16,11 +16,11 @@ const useStyles = makeStyles((theme) => ({
   },
   highlightsDiv: {
     position: 'fixed',
-    // width: '100%'
+    width: '20%'
   },
   unhighlightsDiv: {
     position: 'unset',
-    // width: '100%'
+    width: '100%'
   }
 }));
 
@@ -65,8 +65,10 @@ function App() {
         </Container>
       </Grid>
       <Grid item sm={12} md={3} className={classes.topSpacing}>
+        <Container>
           <Card
             className={isColumn ? classes.unhighlightsDiv : classes.highlightsDiv }
+            // style={{width: '20%'}}
           >
             <Typography
               variant="body2"
@@ -83,6 +85,8 @@ function App() {
                 )
             })}
           </Card>
+
+        </Container>
       </Grid>
       <Grid item sm={12} md={2}/>
     </Grid>
