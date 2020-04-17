@@ -66,12 +66,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 0,
     paddingBottom: 10
   },
-  // 'a:link': {
-  //   color: '#0000EE'
-  // },
-  // 'a:visited': {
-  //   color: '#0000EE'
-  // }
 }));
 
 function ProjectCard({ data }) {
@@ -186,7 +180,7 @@ function ProjectCard({ data }) {
               : <FavoriteBorderOutlinedIcon />}
           </IconButton>
         </Tooltip>
-        {data.id !== 'erik-huynh'
+        {data.type !== 'bio'
           ? <Tooltip title="Github">
             <IconButton
               aria-label="Repository"
