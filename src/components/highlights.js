@@ -1,9 +1,18 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import { Card, Button, Typography } from '@material-ui/core';
 // import SaveIcon from '@material-ui/icons/Save';
 import Avatar from '@material-ui/core/Avatar';
 
+const useStyles = makeStyles((theme) => ({
+    foo: {
+      justifyContent: 'unset'
+    },
+  }));
+
 function Highlights({ data, setState }) {
+    const classes = useStyles();
+
     function handleFilter() {
         setState({postType: data.filterBy})
     }
@@ -13,6 +22,7 @@ function Highlights({ data, setState }) {
             onClick={handleFilter}
         >
             <Button
+                classes={{ label: classes.foo }}
                 size="medium"
                 fullWidth
                 startIcon={
