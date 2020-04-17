@@ -259,7 +259,6 @@ function ProjectCard({ data }) {
                   target="_blank"
                   color={'inherit'}
                 >
-                  {/* <PhoneIcon /> */}
                   <AlertDialog/>
                 </Link>
               </IconButton>
