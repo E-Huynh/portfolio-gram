@@ -8,7 +8,7 @@ import LinkIcon from '@material-ui/icons/Link';
 // import MoreVertIcon from '@material-ui/icons/MoreVert';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InsertDriveFileOutlinedIcon from '@material-ui/icons/InsertDriveFileOutlined';
-import PhoneIcon from '@material-ui/icons/Phone';
+import AlertDialog from './dialog';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -257,7 +257,8 @@ function ProjectCard({ data }) {
                   target="_blank"
                   color={'inherit'}
                 >
-                  <PhoneIcon />
+                  {/* <PhoneIcon /> */}
+                  <AlertDialog/>
                 </Link>
               </IconButton>
             </Tooltip>
