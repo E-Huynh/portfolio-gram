@@ -1,7 +1,9 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, IconButton, Typography, InputBase, MenuItem, Menu, Link, Tooltip } from '@material-ui/core'
-import SearchIcon from '@material-ui/icons/Search';
+import { AppBar, Toolbar, IconButton, Typography, MenuItem, Menu, Link, Tooltip
+    // InputBase,
+} from '@material-ui/core'
+// import SearchIcon from '@material-ui/icons/Search';
 import PhoneIcon from '@material-ui/icons/Phone';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -116,6 +118,7 @@ export default function NavBar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
+            
             <Link
                 href='https://github.com/E-Huynh'
                 target="_blank"
@@ -198,10 +201,16 @@ export default function NavBar() {
         <div className={classes.grow}>
             <AppBar className={classes.nav} position={'fixed'}>
                 <Toolbar className={classes.box}>
-                    <Typography className={classes.title} variant="h6" noWrap>
+                    <Typography
+                        classes={{
+                            title: classes.title,
+                            sectionMobile: classes.sectionMobile,
+                        }}
+                        variant="h6"
+                        noWrap>
                         Portfolio-gram
-                        </Typography>
-                    <div className={classes.search}>
+                    </Typography>
+                    {/* <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
                         </div>
@@ -213,7 +222,7 @@ export default function NavBar() {
                             }}
                             inputProps={{ 'aria-label': 'search' }}
                         />
-                    </div>
+                    </div> */}
                     <div className={classes.sectionDesktop}>
                         <Tooltip title='Github'>
                             <IconButton
