@@ -13,7 +13,7 @@ export const Data = [
     {
         id: 'education',
         title: 'Education',
-        image: 'https://via.placeholder.com/750x520.png',
+        image: 'https://github.com/E-Huynh/portfolio-gram/blob/master/src/assets/Erik%20(2).JPG?raw=true',
         description: "After graduating from UVU in 2013 with a B.S. in Biotechnology, I worked as a Research Associate for 7 yrs in medical diagnostics. I was introduced to software development during that time and decide to enroll in the University of Utah coding bootcamp.",
         repo: 'https://github.com/E-Huynh',
         linkedin: 'https://www.linkedin.com/in/erik-huynh-228321196',
@@ -24,7 +24,7 @@ export const Data = [
     {
         id: 'personal',
         title: 'Hobbies and Interests',
-        image: 'https://via.placeholder.com/750x520.png',
+        image: 'https://github.com/E-Huynh/portfolio-gram/blob/master/src/assets/Erik.Dad%20(2).jpg?raw=true',
         description: "When my schedule slows down, I enjoy many different hobbies including: fishing, painting miniatures, watching the NHL, and traveling to new places. During my recent travels, I had to opportunity to stop a Crater Lake National Park, Redwood National Forest, and Portland, OR. Portland was where I caught the largest fish of my life! A 6' 250 lbs sturgeon from the Columbia River.",
         repo: 'https://github.com/E-Huynh',
         linkedin: 'https://www.linkedin.com/in/erik-huynh-228321196',
