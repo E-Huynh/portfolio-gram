@@ -62,9 +62,7 @@ function App() {
       </Grid>
       <Grid item sm={12} md={3} className={classes.topSpacing}>
         <Container>
-          <Card
-            // className={classes.highlightsDiv}
-          >
+          <Card>
             <Typography
               variant="body2"
               color="textPrimary"
