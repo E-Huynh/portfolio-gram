@@ -2,7 +2,7 @@
 
 [Deployed Link](https://e-huynh.github.io/portfolio-gram/)
 
-[Github Repo](portfolio-gram)
+[Github Repo](https://github.com/E-Huynh)
 
 ## Contact
 
