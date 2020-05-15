@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  const isColumn = useMediaQuery('(max-width: 959px');
+  const isColumn = useMediaQuery('(max-width: 960px');
+  // const isColumn = false;
   const [ state, setState ] = useState({
     postType: ''
   })
