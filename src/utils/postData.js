@@ -11,6 +11,16 @@ export const Data = [
         type: 'bio'
     },
     {
+        id: 'trade-and-play',
+        title: 'Trade and Play',
+        image: 'https://github.com/Arnette110/Trade-and-Play/blob/master/client/src/assets/READEME-screenshots/collection.png?raw=true',
+        description: 'Trade and play brings the excitement of sports card collecting onto the web. New collectible cards can be acquired from drafting from draft packs. Each card is uniquely decorated in team colors and displays an image and statistics of your favorite players. Draft packs contain a random assortment of players from a specific position. Make an account and collect them all!',
+        repo: 'https://github.com/Arnette110/Trade-and-Play',
+        link: 'https://trade-and-play.herokuapp.com/',
+        tech: ['Material-UI', 'MongoDB', 'Express', 'AJAX/Axios', 'MERN'],
+        type: 'project'
+    },
+    {
         id: 'stock-watcher',
         title: 'Stock Watcher',
         image: 'https://github.com/E-Huynh/portfolio-gram/blob/master/src/assets/stock-watcher.png?raw=true',
